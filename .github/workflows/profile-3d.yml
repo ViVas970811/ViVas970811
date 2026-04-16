@@ -4,9 +4,8 @@ on:
   schedule: # 04:00 UTC every day
     - cron: "0 4 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # NOTE: removed `push: branches: [main]` trigger — workflow pushes back to
+  # main, which could trigger itself in a loop on some configurations.
 
 jobs:
   build:
@@ -17,17 +16,44 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # FIX 1: SETTING_JSON is an env var, NOT a `with:` input.
+      #        The action takes zero `with:` inputs.
+      # FIX 2: profile-3d-contrib.json must exist at repo root. If absent,
+      #        the action falls back to defaults (still works, just 1 file).
       - uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-        with:
           SETTING_JSON: profile-3d-contrib.json
 
+      # FIX 3: pull --rebase before push, so a concurrent commit to main
+      #        doesn't reject the push.
       - name: Commit generated SVGs
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+
+          # Stage + commit whatever was generated
           git add -A .
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update 3d contrib"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore: update 3d contrib"
+
+          # Rebase on top of any new commits that landed while we were running
+          git pull --rebase origin main || true
+
+          # Push with retry — handles the rare race where another commit lands
+          # between pull and push.
+          for i in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying..."
+            git pull --rebase origin main || true
+            sleep 2
+          done
+          echo "Push failed after 3 attempts."
+          exit 1
