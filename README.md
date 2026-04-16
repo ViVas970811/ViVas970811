@@ -93,16 +93,6 @@
   <img src="metrics.plugin.isocalendar.svg" alt="Isometric calendar" />
 </p>
 
-<p align="center">
-  <img src="metrics.plugin.languages.svg" alt="Languages deep-dive" width="48%" />
-  <img src="metrics.plugin.habits.svg" alt="Coding habits" width="48%" />
-</p>
-
-<p align="center">
-  <img src="metrics.plugin.achievements.svg" alt="Achievements" width="48%" />
-  <img src="metrics.plugin.topics.svg" alt="Topics" width="48%" />
-</p>
-
 ---
 
 ###  3D Contribution Calendar
