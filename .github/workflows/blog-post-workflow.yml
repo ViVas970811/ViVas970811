@@ -1,33 +1,33 @@
-name: Latest blog post workflow
-on:
-  # Rebuild every 4 hours
-  schedule:
-    - cron: "0 */4 * * *"
-  workflow_dispatch:
+# name: Latest blog post workflow
+# on:
+#   # Rebuild every 4 hours
+#   schedule:
+#     - cron: "0 */4 * * *"
+#   workflow_dispatch:
 
-jobs:
-  update-readme-with-blog:
-    name: Update README with latest posts
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   update-readme-with-blog:
+#     name: Update README with latest posts
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
+#     steps:
+#       - uses: actions/checkout@v4
 
-      # Option A — if you blog on dev.to (recommended, zero setup)
-      - name: Pull dev.to posts
-        uses: gautamkrishnar/blog-post-workflow@v1
-        with:
-          feed_list: "https://dev.to/feed/vivas970811"
-          max_post_count: 4
-          readme_path: ./README.md
-          comment_tag_name: "DEVTO-POSTS"
+#       # Option A — if you blog on dev.to (recommended, zero setup)
+#       - name: Pull dev.to posts
+#         uses: gautamkrishnar/blog-post-workflow@v1
+#         with:
+#           feed_list: "https://dev.to/feed/vivas970811"
+#           max_post_count: 4
+#           readme_path: ./README.md
+#           comment_tag_name: "DEVTO-POSTS"
 
-      # Option B — if you use Medium instead, uncomment this step and comment out the dev.to step
-      # - name: Pull Medium posts
-      #   uses: gautamkrishnar/blog-post-workflow@v1
-      #   with:
-      #     feed_list: "https://medium.com/feed/@vivas970811"
-      #     max_post_count: 4
-      #     readme_path: ./README.md
-      #     comment_tag_name: "MEDIUM-POSTS"
+#       # Option B — if you use Medium instead, uncomment this step and comment out the dev.to step
+#       # - name: Pull Medium posts
+#       #   uses: gautamkrishnar/blog-post-workflow@v1
+#       #   with:
+#       #     feed_list: "https://medium.com/feed/@vivas970811"
+#       #     max_post_count: 4
+#       #     readme_path: ./README.md
+#       #     comment_tag_name: "MEDIUM-POSTS"
