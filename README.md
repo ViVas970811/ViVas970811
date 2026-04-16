@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Production+ML+systems+%E2%80%94+from+notebook+to+prod;Computer+Vision+%E2%80%A2+NLP+%E2%80%A2+Graph+Learning;Fine-tuning+diffusion%2C+training+GNNs%2C+shipping+models.;Always+learning%2C+always+shipping." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=ML+Engineer+%7C+MS+Data+Science+%40+UMD;Building+production+ML+systems;Computer+Vision+%E2%80%A2+NLP+%E2%80%A2+Graph+Learning;Always+learning%2C+always+shipping." alt="Typing SVG" />
   </a>
 </p>
 
