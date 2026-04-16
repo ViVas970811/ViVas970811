@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="Vivek Vasisht Ediga — ML Engineer banner (light)">
+  <defs>
+    <linearGradient id="bgL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F6F8FA"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"   stop-color="#0969DA" stop-opacity="0.12"/>
+      <stop offset="60%"  stop-color="#0969DA" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#0969DA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="meshL" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D0D7DE" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="strokeGradL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#0969DA"/>
+      <stop offset="50%"  stop-color="#8250DF"/>
+      <stop offset="100%" stop-color="#BF3989"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="320" fill="url(#bgL)"/>
+  <rect width="1280" height="320" fill="url(#meshL)"/>
+  <rect width="1280" height="320" fill="url(#glowL)"/>
+
+  <!-- Neural-net accents (same topology, lighter palette) -->
+  <g stroke="#D0D7DE" stroke-width="1" fill="none">
+    <circle cx="110" cy="90"  r="6" fill="#0969DA"/>
+    <circle cx="110" cy="160" r="6" fill="#0969DA"/>
+    <circle cx="110" cy="230" r="6" fill="#0969DA"/>
+    <circle cx="210" cy="60"  r="6" fill="#8250DF"/>
+    <circle cx="210" cy="130" r="6" fill="#8250DF"/>
+    <circle cx="210" cy="200" r="6" fill="#8250DF"/>
+    <circle cx="210" cy="270" r="6" fill="#8250DF"/>
+    <line x1="110" y1="90"  x2="210" y2="60"  />
+    <line x1="110" y1="90"  x2="210" y2="130" />
+    <line x1="110" y1="160" x2="210" y2="60"  />
+    <line x1="110" y1="160" x2="210" y2="130" />
+    <line x1="110" y1="160" x2="210" y2="200" />
+    <line x1="110" y1="230" x2="210" y2="200" />
+    <line x1="110" y1="230" x2="210" y2="270" />
+
+    <circle cx="1170" cy="90"  r="6" fill="#BF3989"/>
+    <circle cx="1170" cy="160" r="6" fill="#BF3989"/>
+    <circle cx="1170" cy="230" r="6" fill="#BF3989"/>
+    <circle cx="1070" cy="60"  r="6" fill="#8250DF"/>
+    <circle cx="1070" cy="130" r="6" fill="#8250DF"/>
+    <circle cx="1070" cy="200" r="6" fill="#8250DF"/>
+    <circle cx="1070" cy="270" r="6" fill="#8250DF"/>
+    <line x1="1170" y1="90"  x2="1070" y2="60"  />
+    <line x1="1170" y1="90"  x2="1070" y2="130" />
+    <line x1="1170" y1="160" x2="1070" y2="130" />
+    <line x1="1170" y1="160" x2="1070" y2="200" />
+    <line x1="1170" y1="230" x2="1070" y2="200" />
+    <line x1="1170" y1="230" x2="1070" y2="270" />
+  </g>
+
+  <g stroke="url(#strokeGradL)" stroke-width="2" fill="none">
+    <path d="M 24 24 L 64 24 M 24 24 L 24 64"/>
+    <path d="M 1256 24 L 1216 24 M 1256 24 L 1256 64"/>
+    <path d="M 24 296 L 64 296 M 24 296 L 24 256"/>
+    <path d="M 1256 296 L 1216 296 M 1256 296 L 1256 256"/>
+  </g>
+
+  <text x="640" y="148" text-anchor="middle"
+        font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+        font-weight="700" font-size="64" fill="#1F2328" letter-spacing="2">
+    Vivek Vasisht Ediga
+  </text>
+
+  <line x1="440" y1="170" x2="840" y2="170" stroke="url(#strokeGradL)" stroke-width="2"/>
+
+  <text x="640" y="210" text-anchor="middle"
+        font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+        font-weight="400" font-size="22" fill="#656D76" letter-spacing="1">
+    ML Engineer  ·  MS Data Science @ UMD  ·  Building production ML systems
+  </text>
+
+  <g font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" font-size="14">
+    <g transform="translate(480,246)">
+      <rect width="100" height="30" rx="15" fill="#F6F8FA" stroke="#D0D7DE"/>
+      <text x="50" y="20" text-anchor="middle" fill="#0969DA">Computer Vision</text>
+    </g>
+    <g transform="translate(590,246)">
+      <rect width="60" height="30" rx="15" fill="#F6F8FA" stroke="#D0D7DE"/>
+      <text x="30" y="20" text-anchor="middle" fill="#8250DF">NLP</text>
+    </g>
+    <g transform="translate(660,246)">
+      <rect width="140" height="30" rx="15" fill="#F6F8FA" stroke="#D0D7DE"/>
+      <text x="70" y="20" text-anchor="middle" fill="#BF3989">Graph Learning</text>
+    </g>
+  </g>
+</svg>
