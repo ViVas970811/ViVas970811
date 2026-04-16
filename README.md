@@ -1,9 +1,18 @@
-<h1 align="center">Hi, I'm Vivek 👋</h1>
+<!-- Adaptive banner: swaps on dark/light mode -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=ML+Engineer+%7C+MS+Data+Science+%40+UMD;Building+production+ML+systems;Computer+Vision+%E2%80%A2+NLP+%E2%80%A2+Graph+Learning;Always+learning%2C+always+shipping." alt="Typing SVG" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)"  srcset="banners/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="banners/banner-light.svg">
+    <img alt="Vivek Vasisht Ediga — ML Engineer banner" src="banners/banner-dark.svg">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="https://readme-typing-svg.demolab.com">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Production+ML+systems+%E2%80%94+from+notebook+to+prod;Computer+Vision+%E2%80%A2+NLP+%E2%80%A2+Graph+Learning;Fine-tuning+diffusion%2C+training+GNNs%2C+shipping+models.;Always+learning%2C+always+shipping." alt="Typing SVG" />
   </a>
 </p>
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=ViVas970811&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
   <a href="mailto:evivek@umd.edu">
@@ -14,63 +23,119 @@
   </a>
 </p>
 
-🎯 About Me
+---
 
-🎓 MS Data Science @ University of Maryland (UMD)
-🧠 ML Engineer focused on production systems — computer vision, NLP, and graph learning
-🔭 Currently shipping: cloud-native ML pipelines on AWS + GPU-accelerated inference
-🌱 Learning: distributed training, LLM fine-tuning, and MLOps at scale
-💬 Ask me about: PyTorch, YOLO, diffusion models, GNNs, MLOps
-📫 Reach me: evivek@umd.edu
+### 🎯 About
 
+> MS Data Science @ UMD. I build **production ML systems** — cloud-native pipelines, fine-tuned diffusion, heterogeneous graph models, and real-time inference services.
 
-🛠️ Tech Stack
+- 🔭 **Shipping:** cloud-native ML pipelines on AWS + GPU inference services
+- 🧠 **Working in:** PyTorch, Diffusion, GNNs, MLOps, streaming data
+- 🌱 **Learning:** distributed training, LLM fine-tuning, model serving at scale
+- 📫 **Reach me:** evivek@umd.edu
+
+---
+
+### 🛠 Stack
+
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,aws,docker,kafka,postgres,linux,git,github,vscode&theme=dark" alt="Tech stack" />
+  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,aws,docker,kafka,postgres,fastapi,linux,git,github,vscode&theme=dark" alt="Tech stack" />
 </p>
 
-📌 Featured Projects
+---
+
+### 📌 Featured Projects
+
 <table>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/ViVas970811/WildlifeDetection_YOLOv8">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=WildlifeDetection_YOLOv8&theme=github_dark&hide_border=true" alt="WildlifeDetection_YOLOv8" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=WildlifeDetection_YOLOv8&theme=github_dark&hide_border=true" />
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/ViVas970811/MedQA">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=MedQA&theme=github_dark&hide_border=true" alt="MedQA" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=MedQA&theme=github_dark&hide_border=true" />
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/ViVas970811/ClearShot">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=ClearShot&theme=github_dark&hide_border=true" alt="ClearShot" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=ClearShot&theme=github_dark&hide_border=true" />
       </a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/ViVas970811/Meshwatch">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=Meshwatch&theme=github_dark&hide_border=true" alt="Meshwatch" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=ViVas970811&repo=Meshwatch&theme=github_dark&hide_border=true" />
       </a>
     </td>
   </tr>
 </table>
 
-📊 GitHub Stats
-<p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=ViVas970811&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub stats" />
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ViVas970811&layout=compact&theme=github_dark&hide_border=true&langs_count=8" alt="Top languages" />
-</p>
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ViVas970811&theme=github-dark&hide_border=true" alt="GitHub streak" />
-</p>
+---
 
-🐍 Contribution Snake
+### 📊 GitHub Metrics
+
 <p align="center">
-  <img alt="snake gif" src="https://raw.githubusercontent.com/ViVas970811/ViVas970811/output/github-contribution-grid-snake-dark.svg" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=ViVas970811&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ViVas970811&layout=compact&theme=github_dark&hide_border=true&langs_count=8" />
 </p>
 
 <p align="center">
-  <i>Thanks for stopping by — feel free to reach out at <a href="mailto:evivek@umd.edu">evivek@umd.edu</a>.</i>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ViVas970811&theme=github-dark&hide_border=true" />
+</p>
+
+---
+
+### 🧭 Coding Habits & Repos
+
+<!-- These four SVGs come from the lowlighter/metrics Action. -->
+<p align="center">
+  <img src="metrics.plugin.isocalendar.svg" alt="Isometric calendar" />
+</p>
+
+<p align="center">
+  <img src="metrics.plugin.languages.svg" alt="Languages deep-dive" width="48%" />
+  <img src="metrics.plugin.habits.svg" alt="Coding habits" width="48%" />
+</p>
+
+<p align="center">
+  <img src="metrics.plugin.achievements.svg" alt="Achievements" width="48%" />
+  <img src="metrics.plugin.topics.svg" alt="Topics" width="48%" />
+</p>
+
+---
+
+### 🧊 3D Contribution Calendar
+
+<p align="center">
+  <img src="profile-3d-contrib/profile-season.svg" alt="3D contribution calendar" />
+</p>
+
+---
+
+### 🐍 Contribution Snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/ViVas970811/ViVas970811/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ViVas970811/ViVas970811/output/github-contribution-grid-snake.svg">
+    <img alt="snake animation" src="https://raw.githubusercontent.com/ViVas970811/ViVas970811/output/github-contribution-grid-snake.svg">
+  </picture>
+</p>
+
+---
+
+### ✍️ Latest Writing
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+<sub>↑ auto-updated every 4 hours from my blog via GitHub Actions.</sub>
+
+---
+
+<p align="center">
+  <i>Thanks for stopping by — drop me a line at <a href="mailto:evivek@umd.edu">evivek@umd.edu</a>.</i>
 </p>
