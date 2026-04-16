@@ -137,7 +137,3 @@
 <p align="center">
   <i>Thanks for stopping by — drop me a line at <a href="mailto:evivek@umd.edu">evivek@umd.edu</a>.</i>
 </p>
-
-<p align="center">
-  <sub>Design system and palette: <a href="./BRAND.md">BRAND.md</a></sub>
-</p>
