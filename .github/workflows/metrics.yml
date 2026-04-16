@@ -1,15 +1,30 @@
+# ═══════════════════════════════════════════════════════════════════════
+# Metrics workflow — SEQUENTIAL variant
+# ═══════════════════════════════════════════════════════════════════════
+# IMPORTANT: All jobs are chained with `needs:` so they run one at a time.
+# The lowlighter/metrics Action has a known race condition when multiple
+# parallel jobs all commit to the same branch (`main`). Each job reads the
+# repo at a SHA, generates its SVG, and tries to PUT it back. The second
+# commit in a race gets a 409 Conflict because its base SHA is now stale.
+#
+# Running sequentially: total runtime ≈ 7×1min ≈ 7 min per run, but every
+# job succeeds. Since this runs on a 6-hour schedule, runtime doesn't matter.
+# ═══════════════════════════════════════════════════════════════════════
+
 name: Metrics
 on:
-  # Schedule updates (every ~6 hours)
   schedule: [{cron: "0 */6 * * *"}]
-  # Trigger on commit to default branch
   push: {branches: ["main"]}
-  # Manual trigger
   workflow_dispatch:
+
+# Also add a concurrency group so two runs of this workflow can't overlap
+concurrency:
+  group: metrics-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   # ─────────────────────────────────────────
-  # Classic metrics card — commits, issues, PRs
+  # 1. Classic overview
   # ─────────────────────────────────────────
   overview:
     runs-on: ubuntu-latest
@@ -24,37 +39,15 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/New_York
-          config_padding: 0, 2px
-
-  # ─────────────────────────────────────────
-  # Achievements
-  # Safer config for newer accounts: `secrets: no` (avoids hidden-achievement data
-  # failures) and `detailed` display (more forgiving than compact).
-  # ─────────────────────────────────────────
-  achievements:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.achievements.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ViVas970811
-          base: ""
           retries: 3
           retries_delay: 300
-          plugin_achievements: yes
-          plugin_achievements_threshold: C
-          plugin_achievements_secrets: no
-          plugin_achievements_display: detailed
-          plugin_achievements_limit: 0
 
   # ─────────────────────────────────────────
-  # Isometric calendar (half-year)
+  # 2. Isometric calendar  (waits for overview)
   # ─────────────────────────────────────────
   isocalendar:
     runs-on: ubuntu-latest
+    needs: overview
     permissions:
       contents: write
     steps:
@@ -64,14 +57,17 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ViVas970811
           base: ""
+          retries: 3
+          retries_delay: 300
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
 
   # ─────────────────────────────────────────
-  # Languages — indepth + colors
+  # 3. Languages  (waits for isocalendar)
   # ─────────────────────────────────────────
   languages:
     runs-on: ubuntu-latest
+    needs: isocalendar
     permissions:
       contents: write
     steps:
@@ -81,6 +77,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ViVas970811
           base: ""
+          retries: 3
+          retries_delay: 300
           plugin_languages: yes
           plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 15
@@ -89,13 +87,34 @@ jobs:
           plugin_languages_limit: 8
 
   # ─────────────────────────────────────────
-  # Habits (coding rhythm: when do you commit?)
-  # Safer config for newer accounts: fewer commits, shorter window, facts only.
-  # `plugin_habits_charts: yes` + `plugin_habits_facts: yes` together often
-  # crashes on accounts with sparse commit history — we keep facts only.
+  # 4. Topics  (waits for languages)
+  # ─────────────────────────────────────────
+  topics:
+    runs-on: ubuntu-latest
+    needs: languages
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.topics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ViVas970811
+          base: ""
+          retries: 3
+          retries_delay: 300
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_sort: stars
+          plugin_topics_limit: 15
+
+  # ─────────────────────────────────────────
+  # 5. Habits  (waits for topics)
+  # Safer config for sparse-commit accounts.
   # ─────────────────────────────────────────
   habits:
     runs-on: ubuntu-latest
+    needs: topics
     permissions:
       contents: write
     steps:
@@ -114,10 +133,35 @@ jobs:
           plugin_habits_charts: no
 
   # ─────────────────────────────────────────
-  # Followup (open/closed PRs + issues)
+  # 6. Achievements  (waits for habits)
+  # Safer config for sparse-commit accounts.
+  # ─────────────────────────────────────────
+  achievements:
+    runs-on: ubuntu-latest
+    needs: habits
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ViVas970811
+          base: ""
+          retries: 3
+          retries_delay: 300
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: no
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 0
+
+  # ─────────────────────────────────────────
+  # 7. Followup  (waits for achievements)
   # ─────────────────────────────────────────
   followup:
     runs-on: ubuntu-latest
+    needs: achievements
     permissions:
       contents: write
     steps:
@@ -127,24 +171,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ViVas970811
           base: ""
+          retries: 3
+          retries_delay: 300
           plugin_followup: yes
           plugin_followup_sections: repositories
-
-  # ─────────────────────────────────────────
-  # Topics (areas you work in, icons mode)
-  # ─────────────────────────────────────────
-  topics:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.topics.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ViVas970811
-          base: ""
-          plugin_topics: yes
-          plugin_topics_mode: icons
-          plugin_topics_sort: stars
-          plugin_topics_limit: 15
