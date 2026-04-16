@@ -1,11 +1,9 @@
-<!-- Adaptive banner: swaps on dark/light mode -->
+<!-- Animated banner: live neural pipeline. Pure SVG + SMIL, no text that duplicates the bio. -->
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="banners/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="banners/banner-light.svg">
-    <img alt="Vivek Vasisht Ediga — ML Engineer banner" src="banners/banner-dark.svg">
-  </picture>
+  <img alt="Animated neural pipeline" src="banners/banner-animated.svg" />
 </p>
+
+<h1 align="center">Hi, I'm Vivek Vasisht</h1>
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
@@ -25,18 +23,18 @@
 
 ---
 
-### 🎯 About
+###  About
 
 > MS Data Science @ UMD. I build **production ML systems** — cloud-native pipelines, fine-tuned diffusion, heterogeneous graph models, and real-time inference services.
 
-- 🔭 **Shipping:** cloud-native ML pipelines on AWS + GPU inference services
-- 🧠 **Working in:** PyTorch, Diffusion, GNNs, MLOps, streaming data
-- 🌱 **Learning:** distributed training, LLM fine-tuning, model serving at scale
-- 📫 **Reach me:** evivek@umd.edu
+-  **Shipping:** cloud-native ML pipelines on AWS + GPU inference services
+-  **Working in:** PyTorch, Diffusion, GNNs, MLOps, streaming data
+-  **Learning:** distributed training, LLM fine-tuning, model serving at scale
+-  **Reach me:** evivek@umd.edu
 
 ---
 
-### 🛠 Stack
+###  Stack
 
 <p align="left">
   <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,aws,docker,kafka,postgres,fastapi,linux,git,github,vscode&theme=dark" alt="Tech stack" />
@@ -44,7 +42,7 @@
 
 ---
 
-### 📌 Featured Projects
+###  Featured Projects
 
 <table>
   <tr>
@@ -75,7 +73,7 @@
 
 ---
 
-### 📊 GitHub Metrics
+###  GitHub Metrics
 
 <p align="center">
   <img height="180" src="https://github-readme-stats.vercel.app/api?username=ViVas970811&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true" />
@@ -88,7 +86,7 @@
 
 ---
 
-### 🧭 Coding Habits & Repos
+###  Coding Habits & Repos
 
 <!-- These four SVGs come from the lowlighter/metrics Action. -->
 <p align="center">
@@ -107,7 +105,7 @@
 
 ---
 
-### 🧊 3D Contribution Calendar
+###  3D Contribution Calendar
 
 <p align="center">
   <img src="profile-3d-contrib/profile-season.svg" alt="3D contribution calendar" />
@@ -115,7 +113,7 @@
 
 ---
 
-### 🐍 Contribution Snake
+###  Contribution Snake
 
 <p align="center">
   <picture>
@@ -127,7 +125,7 @@
 
 ---
 
-### ✍️ Latest Writing
+###  Latest Writing
 
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
@@ -138,4 +136,8 @@
 
 <p align="center">
   <i>Thanks for stopping by — drop me a line at <a href="mailto:evivek@umd.edu">evivek@umd.edu</a>.</i>
+</p>
+
+<p align="center">
+  <sub>Design system and palette: <a href="./BRAND.md">BRAND.md</a></sub>
 </p>
