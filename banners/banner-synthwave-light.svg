@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320"
+     role="img" aria-label="Synthwave horizon banner (Daytime Miami variant) — neon grid, retro sun, ML Engineer headline">
+  <defs>
+    <!-- ─── BACKGROUND GRADIENTS ─── -->
+    <radialGradient id="sky" cx="50%" cy="60%" r="75%">
+      <stop offset="0%"   stop-color="#fff5fa"/>
+      <stop offset="55%"  stop-color="#ffe2ee"/>
+      <stop offset="100%" stop-color="#ffd1e3"/>
+    </radialGradient>
+
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffad1f"/>
+      <stop offset="45%"  stop-color="#ff4d8d"/>
+      <stop offset="100%" stop-color="#d6246e"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#0091a8"/>
+      <stop offset="100%" stop-color="#d6246e"/>
+    </linearGradient>
+
+    <radialGradient id="sun-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff4d8d" stop-opacity="0.35"/>
+      <stop offset="60%"  stop-color="#8e2de2" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#8e2de2" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ─── CRT SCANLINES (lighter on light bg) ─── -->
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#1a0033" fill-opacity="0.05"/>
+    </pattern>
+
+    <!-- ─── GLOW FILTERS ─── -->
+    <filter id="glow-mag" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="above-horizon">
+      <rect x="0" y="0" width="1280" height="192"/>
+    </clipPath>
+
+    <mask id="sun-stripes">
+      <rect x="0" y="0" width="1280" height="320" fill="white"/>
+      <rect x="480" y="166" width="320" height="3" fill="black"/>
+      <rect x="480" y="158" width="320" height="2" fill="black"/>
+      <rect x="480" y="148" width="320" height="2" fill="black"/>
+      <rect x="480" y="136" width="320" height="2" fill="black"/>
+      <rect x="480" y="122" width="320" height="2" fill="black"/>
+      <rect x="480" y="106" width="320" height="1.5" fill="black"/>
+      <rect x="480" y="88"  width="320" height="1.5" fill="black"/>
+      <rect x="480" y="68"  width="320" height="1" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- ═══════════════ BACKGROUND ═══════════════ -->
+  <rect width="1280" height="320" fill="url(#sky)"/>
+
+  <!-- Faint "daytime clouds" dots instead of stars (above horizon) -->
+  <g clip-path="url(#above-horizon)" opacity="0.5">
+    <g fill="#d6246e">
+      <circle cx="60"   cy="30"  r="1.0"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.1s" repeatCount="indefinite"/></circle>
+      <circle cx="140"  cy="60"  r="1.2"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="220"  cy="25"  r="0.9"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="4.0s" repeatCount="indefinite"/></circle>
+      <circle cx="290"  cy="95"  r="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="360"  cy="45"  r="1.1"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="3.6s" repeatCount="indefinite"/></circle>
+      <circle cx="420"  cy="110" r="0.8"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="80"   cy="140" r="0.7"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.4s" repeatCount="indefinite"/></circle>
+      <circle cx="920"  cy="40"  r="1.0"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.2s" repeatCount="indefinite"/></circle>
+      <circle cx="980"  cy="90"  r="1.1"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="1040" cy="30"  r="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.1s" repeatCount="indefinite"/></circle>
+      <circle cx="1100" cy="120" r="0.9"><animate attributeName="opacity" values="0.8;0.4;0.8" dur="3.0s" repeatCount="indefinite"/></circle>
+      <circle cx="1180" cy="55"  r="0.7"><animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.7s" repeatCount="indefinite"/></circle>
+      <circle cx="1220" cy="145" r="1.0"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.8s" repeatCount="indefinite"/></circle>
+      <circle cx="510"  cy="20"  r="0.6"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.9s" repeatCount="indefinite"/></circle>
+      <circle cx="770"  cy="25"  r="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.3s" repeatCount="indefinite"/></circle>
+      <circle cx="620"  cy="15"  r="0.7"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="4.0s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+
+  <!-- Sun halo -->
+  <circle cx="640" cy="190" r="220" fill="url(#sun-halo)">
+    <animate attributeName="r" values="210;235;210" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Sun disc -->
+  <g clip-path="url(#above-horizon)">
+    <circle cx="640" cy="190" r="130" fill="url(#sun)" mask="url(#sun-stripes)" filter="url(#glow-mag)"/>
+  </g>
+
+  <!-- Mountain silhouettes (softer on light bg) -->
+  <polygon points="0,192 120,168 210,180 320,150 430,185 520,165 600,185 640,170 700,185 780,158 860,182 980,172 1080,185 1180,160 1280,188 1280,195 0,195"
+           fill="#8e2de2" opacity="0.38"/>
+  <polygon points="0,195 90,180 180,188 280,172 390,189 500,178 610,190 720,180 810,191 900,176 1000,188 1110,180 1200,189 1280,183 1280,198 0,198"
+           fill="#d6246e" opacity="0.45"/>
+
+  <!-- Horizon glow -->
+  <rect x="0" y="192" width="1280" height="1.5" fill="#d6246e" opacity="0.65" filter="url(#glow-soft)"/>
+
+  <!-- Perspective grid -->
+  <g stroke="#d6246e" stroke-width="1" fill="none" opacity="0.65">
+    <line x1="0" y1="194" x2="1280" y2="194" opacity="0.25"/>
+    <line x1="0" y1="197" x2="1280" y2="197" opacity="0.32"/>
+    <line x1="0" y1="202" x2="1280" y2="202" opacity="0.40"/>
+    <line x1="0" y1="209" x2="1280" y2="209" opacity="0.48"/>
+    <line x1="0" y1="218" x2="1280" y2="218" opacity="0.55"/>
+    <line x1="0" y1="230" x2="1280" y2="230" opacity="0.63"/>
+    <line x1="0" y1="245" x2="1280" y2="245" opacity="0.70"/>
+    <line x1="0" y1="264" x2="1280" y2="264" opacity="0.78"/>
+    <line x1="0" y1="287" x2="1280" y2="287" opacity="0.85"/>
+    <line x1="0" y1="315" x2="1280" y2="315" opacity="0.95"/>
+
+    <line x1="640" y1="192" x2="-220"  y2="320"/>
+    <line x1="640" y1="192" x2="-40"   y2="320"/>
+    <line x1="640" y1="192" x2="155"   y2="320"/>
+    <line x1="640" y1="192" x2="330"   y2="320"/>
+    <line x1="640" y1="192" x2="475"   y2="320"/>
+    <line x1="640" y1="192" x2="575"   y2="320"/>
+    <line x1="640" y1="192" x2="640"   y2="320"/>
+    <line x1="640" y1="192" x2="705"   y2="320"/>
+    <line x1="640" y1="192" x2="805"   y2="320"/>
+    <line x1="640" y1="192" x2="950"   y2="320"/>
+    <line x1="640" y1="192" x2="1125"  y2="320"/>
+    <line x1="640" y1="192" x2="1320"  y2="320"/>
+    <line x1="640" y1="192" x2="1500"  y2="320"/>
+  </g>
+
+  <!-- Scan sweep -->
+  <rect x="0" y="192" width="1280" height="2" fill="#0091a8" opacity="0.7" filter="url(#glow-soft)">
+    <animate attributeName="y"       values="192;320" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0"   dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ═══════════════ HEADLINE (glitch-swap cycle, 16s total) ═══════════════ -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace" font-weight="700" text-anchor="middle"
+     filter="url(#glow-mag)">
+
+    <text x="640" y="100" font-size="42" fill="#d6246e" opacity="0">
+      <animate attributeName="opacity"
+               values="0;1;1;0;0"
+               keyTimes="0;0.02;0.22;0.245;1"
+               dur="16s" repeatCount="indefinite"/>
+      ML ENGINEER
+    </text>
+
+    <text x="640" y="100" font-size="34" fill="#0091a8" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0;0"
+               keyTimes="0;0.248;0.27;0.47;0.495;1"
+               dur="16s" repeatCount="indefinite"/>
+      MS DATA SCIENCE · UMD
+    </text>
+
+    <text x="640" y="100" font-size="32" fill="#8e2de2" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0;0"
+               keyTimes="0;0.498;0.52;0.72;0.745;1"
+               dur="16s" repeatCount="indefinite"/>
+      DIFFUSION · GNNS · MLOPS
+    </text>
+
+    <text x="640" y="100" font-size="38" fill="#d6246e" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0;0"
+               keyTimes="0;0.748;0.77;0.97;0.995;1"
+               dur="16s" repeatCount="indefinite"/>
+      NOW SHIPPING…
+    </text>
+  </g>
+
+  <text x="640" y="132" font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="12" fill="#8e2de2" text-anchor="middle" letter-spacing="4"
+        opacity="0.75">
+    [ A I   ·   D A T A   ·   S Y S T E M S ]
+  </text>
+
+  <!-- Glitch flash -->
+  <rect x="300" y="78" width="680" height="3" fill="#0091a8" opacity="0">
+    <animate attributeName="opacity"
+             values="0;0;0.7;0;0"
+             keyTimes="0;0.48;0.49;0.5;1"
+             dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="y"
+             values="78;78;108;78;78"
+             keyTimes="0;0.48;0.49;0.5;1"
+             dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Corner brackets -->
+  <g stroke="url(#accent)" stroke-width="2" fill="none" filter="url(#glow-soft)">
+    <path d="M 20 20 L 60 20 M 20 20 L 20 60"/>
+    <path d="M 1260 20 L 1220 20 M 1260 20 L 1260 60"/>
+    <path d="M 20 300 L 60 300 M 20 300 L 20 260"/>
+    <path d="M 1260 300 L 1220 300 M 1260 300 L 1260 260"/>
+  </g>
+
+  <!-- Scanline overlay (very subtle in light mode) -->
+  <rect width="1280" height="320" fill="url(#scanlines)" pointer-events="none"/>
+
+  <!-- Signature -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#8e2de2">
+    <text x="30" y="308" opacity="0.7">SYS://vivek.vasisht</text>
+    <text x="1250" y="308" text-anchor="end" opacity="0.7">v2.0 · ONLINE</text>
+  </g>
+
+  <!-- Easter-egg hotspot -->
+  <a href="easter.md" aria-label="secret">
+    <rect x="1268" y="312" width="8" height="6" fill="#ffad1f" opacity="0.25"/>
+  </a>
+</svg>

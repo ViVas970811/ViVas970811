@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 40" width="820" height="40"
+     role="img" aria-label="Status: graduating May 2026, open to ML Engineer roles, evivek@umd.edu">
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ff2e9f"/>
+      <stop offset="50%"  stop-color="#b967ff"/>
+      <stop offset="100%" stop-color="#05d9e8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="1.3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scanlines" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#000" fill-opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- Panel background -->
+  <rect x="1" y="1" width="818" height="38" rx="4" fill="#1a0033" stroke="url(#frame)" stroke-width="1.2"/>
+  <rect x="1" y="1" width="818" height="38" rx="4" fill="url(#scanlines)" pointer-events="none"/>
+
+  <!-- Left: blinking "live" indicator -->
+  <g transform="translate(18 20)">
+    <circle r="4.5" fill="#05ff8a" filter="url(#glow)">
+      <animate attributeName="opacity" values="1;0.15;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4.5" fill="none" stroke="#05ff8a" stroke-width="1" opacity="0.6">
+      <animate attributeName="r"       values="4.5;10" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0"  dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Status text -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">
+    <text x="36" y="25" fill="#fffb96" letter-spacing="1.2" filter="url(#glow)">GRADUATING MAY 2026</text>
+    <text x="210" y="25" fill="#b967ff" letter-spacing="1.2">·</text>
+    <text x="225" y="25" fill="#05d9e8" letter-spacing="1.2" filter="url(#glow)">OPEN TO ML ENGINEER ROLES</text>
+    <text x="475" y="25" fill="#b967ff" letter-spacing="1.2">·</text>
+    <text x="490" y="25" fill="#ff71ce" letter-spacing="1" filter="url(#glow)">evivek@umd.edu</text>
+  </g>
+
+  <!-- Right: frame corners -->
+  <g stroke="#05d9e8" stroke-width="1" fill="none" opacity="0.9">
+    <path d="M 804 8 L 811 8 L 811 15"/>
+    <path d="M 804 32 L 811 32 L 811 25"/>
+  </g>
+
+  <!-- Scanning line across the bar (subtle) -->
+  <rect x="2" y="20" width="2" height="18" fill="#05d9e8" opacity="0.55" filter="url(#glow)">
+    <animate attributeName="x"       values="2;816;2" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.55;0" dur="7s" repeatCount="indefinite"/>
+  </rect>
+</svg>
