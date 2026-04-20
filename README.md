@@ -155,7 +155,9 @@
 <table>
   <tr>
     <td width="50%" valign="top" align="center">
-      <img src="banners/now-playing.svg" alt="Now playing" />
+      <a href="https://open.spotify.com/search/I%20Ain%27t%20Worried%20OneRepublic" title="Listen on Spotify">
+        <img src="banners/now-playing.svg" alt="On repeat: I Ain't Worried — OneRepublic (click to listen on Spotify)" />
+      </a>
     </td>
     <td width="50%" valign="top" align="center">
       <img src="banners/live-focus.svg" alt="Current focus" />
@@ -163,7 +165,7 @@
   </tr>
 </table>
 
-<sub>↑ <b>On repeat</b> — a current favorite, hand-picked. <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
+<sub>↑ <b>On repeat</b> — click the card to listen on Spotify. <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
 
 ---
 
