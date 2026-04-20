@@ -1,0 +1,105 @@
+# ═══════════════════════════════════════════════════════════════════════
+# Currently-building — pulls the 3 most recently pushed repos (excluding
+# the profile repo + archives + forks) and inserts a card row between
+# <!-- CURRENTLY-BUILDING:START --> / :END markers in README.md.
+# ═══════════════════════════════════════════════════════════════════════
+
+name: Currently Building
+on:
+  schedule: [{cron: "0 */6 * * *"}]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["README.md", ".github/workflows/currently-building.yml"]
+
+concurrency:
+  group: currently-building-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch 3 most recently pushed public repos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER: ViVas970811
+        run: |
+          gh api "/users/$USER/repos?sort=pushed&per_page=30" \
+            --jq '[.[] | select(.archived==false and .fork==false and .name!="'"$USER"'") ] | .[0:3] | map({name, description, language, stars: .stargazers_count, pushed_at, html_url})' \
+            > /tmp/repos.json
+          cat /tmp/repos.json
+
+      - name: Build cards section
+        run: |
+          python3 - <<'PY'
+          import json, datetime, pathlib
+          repos = json.load(open('/tmp/repos.json'))
+          def ago(ts):
+              dt = datetime.datetime.fromisoformat(ts.replace('Z','+00:00'))
+              delta = datetime.datetime.now(datetime.timezone.utc) - dt
+              d = delta.days
+              if d == 0:
+                  h = delta.seconds // 3600
+                  return f"{h}h ago" if h else "just now"
+              if d < 30: return f"{d}d ago"
+              if d < 365: return f"{d//30}mo ago"
+              return f"{d//365}y ago"
+
+          rows = []
+          for r in repos:
+              name = r['name']
+              desc = (r['description'] or '').replace('|','\\|')[:90]
+              lang = r['language'] or '—'
+              stars = r['stars']
+              pushed = ago(r['pushed_at'])
+              url = r['html_url']
+              cell = (
+                  f"<td width='33%' valign='top'>"
+                  f"<a href='{url}'><b>{name}</b></a><br>"
+                  f"<sub>{desc}</sub><br><br>"
+                  f"<sub>● {lang} &nbsp; ★ {stars} &nbsp; · &nbsp; pushed {pushed}</sub>"
+                  f"</td>"
+              )
+              rows.append(cell)
+
+          # Pad to 3 cells if fewer repos returned
+          while len(rows) < 3:
+              rows.append("<td width='33%'></td>")
+
+          table = "<table><tr>" + "".join(rows) + "</tr></table>"
+          pathlib.Path('/tmp/cards.html').write_text(table)
+          PY
+
+      - name: Splice into README between markers
+        run: |
+          python3 - <<'PY'
+          import re, pathlib
+          readme = pathlib.Path('README.md').read_text()
+          new = pathlib.Path('/tmp/cards.html').read_text()
+          pattern = r'(<!-- CURRENTLY-BUILDING:START -->)[\s\S]*?(<!-- CURRENTLY-BUILDING:END -->)'
+          replacement = r'\1\n' + new + r'\n\2'
+          updated = re.sub(pattern, replacement, readme)
+          if updated != readme:
+              pathlib.Path('README.md').write_text(updated)
+              print("README updated")
+          else:
+              print("No change")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "ViVas970811"
+          git config user.email "140938681+ViVas970811@users.noreply.github.com"
+          if ! git diff --quiet README.md; then
+            git add README.md
+            git commit -m "Update currently-building cards - [Skip GitHub Action]"
+            git push
+          else
+            echo "No changes to commit."
+          fi

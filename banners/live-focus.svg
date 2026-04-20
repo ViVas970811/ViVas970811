@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100"
+     role="img" aria-label="Live focus widget — local time, deep-work status, on the bench">
+  <defs>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#58A6FF"/>
+      <stop offset="50%"  stop-color="#A371F7"/>
+      <stop offset="100%" stop-color="#F778BA"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161B22"/>
+      <stop offset="100%" stop-color="#0D1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.6" y="0.6" width="478.8" height="98.8" rx="8" fill="url(#panel)" stroke="url(#border)" stroke-width="1.2"/>
+
+  <!-- label -->
+  <text x="14" y="18" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#8B949E" letter-spacing="1.5">~/ focus</text>
+
+  <!-- status indicator -->
+  <g transform="translate(14 44)">
+    <circle r="5" fill="#58A6FF">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="none" stroke="#58A6FF" stroke-width="1" opacity="0.6">
+      <animate attributeName="r" values="5;12" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- status text -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace">
+    <text x="34" y="48" font-size="14" fill="#58A6FF" font-weight="600">SHIPPING</text>
+    <text x="34" y="66" font-size="10" fill="#8B949E">on the bench: diffusion fine-tune · heterogeneous GNN eval</text>
+
+    <!-- local time (right side) -->
+    <!-- CLOCK-TIME markers below are substituted hourly by .github/workflows/live-focus.yml -->
+    <text x="466" y="28" font-size="10" text-anchor="end" fill="#484F58" letter-spacing="1.2">COLLEGE PARK · UTC−04</text>
+    <text x="466" y="56" font-size="22" text-anchor="end" fill="#C9D1D9" font-weight="600">
+      <!-- CLOCK-TIME:START -->--:--<!-- CLOCK-TIME:END -->
+    </text>
+    <text x="466" y="76" font-size="9" text-anchor="end" fill="#484F58">
+      updated <!-- CLOCK-UPDATED:START -->never<!-- CLOCK-UPDATED:END -->
+    </text>
+  </g>
+</svg>

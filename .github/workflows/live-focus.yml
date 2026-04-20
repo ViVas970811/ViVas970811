@@ -1,0 +1,61 @@
+# ═══════════════════════════════════════════════════════════════════════
+# Live-focus — hourly updates only the CLOCK-TIME and CLOCK-UPDATED
+# markers inside banners/live-focus.svg. Everything else (status label,
+# "on the bench:" line) is hand-edited weekly in the SVG itself.
+#
+# The workflow is deliberately minimal — time is the only truly dynamic
+# part. Status and current-project claims stay honest because they are
+# only changed by you, not by a cron.
+# ═══════════════════════════════════════════════════════════════════════
+
+name: Live Focus
+on:
+  schedule: [{cron: "5 * * * *"}]       # :05 of every hour
+  workflow_dispatch:
+
+concurrency:
+  group: live-focus-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stamp current time (America/New_York)
+        run: |
+          export TZ=America/New_York
+          TIME=$(date +'%H:%M')
+          UPDATED=$(date +'%H:%M %Z')
+          python3 - <<PY
+          import re, pathlib
+          p = pathlib.Path('banners/live-focus.svg')
+          s = p.read_text()
+          s = re.sub(
+              r'<!-- CLOCK-TIME:START -->[\s\S]*?<!-- CLOCK-TIME:END -->',
+              '<!-- CLOCK-TIME:START -->${TIME}<!-- CLOCK-TIME:END -->',
+              s,
+          )
+          s = re.sub(
+              r'<!-- CLOCK-UPDATED:START -->[\s\S]*?<!-- CLOCK-UPDATED:END -->',
+              '<!-- CLOCK-UPDATED:START -->${UPDATED}<!-- CLOCK-UPDATED:END -->',
+              s,
+          )
+          p.write_text(s)
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "ViVas970811"
+          git config user.email "140938681+ViVas970811@users.noreply.github.com"
+          if ! git diff --quiet banners/live-focus.svg; then
+            git add banners/live-focus.svg
+            git commit -m "Update focus clock - [Skip GitHub Action]"
+            git push
+          else
+            echo "No change."
+          fi

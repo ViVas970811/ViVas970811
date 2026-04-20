@@ -36,9 +36,54 @@
 
 ###  Stack
 
+<!-- Each icon links to a filtered search of my repos using that technology. -->
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn,opencv,aws,docker,kafka,postgres,fastapi,linux,git,github,vscode&theme=dark" alt="Tech stack" />
+  <a href="https://github.com/search?q=user%3AViVas970811+language%3APython&type=repositories"><img src="https://skillicons.dev/icons?i=python&theme=dark" height="48" alt="Python" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+pytorch&type=repositories"><img src="https://skillicons.dev/icons?i=pytorch&theme=dark" height="48" alt="PyTorch" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+tensorflow&type=repositories"><img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" height="48" alt="TensorFlow" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+sklearn&type=repositories"><img src="https://skillicons.dev/icons?i=sklearn&theme=dark" height="48" alt="scikit-learn" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+opencv&type=repositories"><img src="https://skillicons.dev/icons?i=opencv&theme=dark" height="48" alt="OpenCV" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+aws&type=repositories"><img src="https://skillicons.dev/icons?i=aws&theme=dark" height="48" alt="AWS" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+docker&type=repositories"><img src="https://skillicons.dev/icons?i=docker&theme=dark" height="48" alt="Docker" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+kafka&type=repositories"><img src="https://skillicons.dev/icons?i=kafka&theme=dark" height="48" alt="Kafka" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+postgres&type=repositories"><img src="https://skillicons.dev/icons?i=postgres&theme=dark" height="48" alt="Postgres" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+fastapi&type=repositories"><img src="https://skillicons.dev/icons?i=fastapi&theme=dark" height="48" alt="FastAPI" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811+linux&type=repositories"><img src="https://skillicons.dev/icons?i=linux&theme=dark" height="48" alt="Linux" /></a>
+  <a href="https://github.com/ViVas970811?tab=repositories"><img src="https://skillicons.dev/icons?i=git&theme=dark" height="48" alt="Git" /></a>
+  <a href="https://github.com/ViVas970811"><img src="https://skillicons.dev/icons?i=github&theme=dark" height="48" alt="GitHub" /></a>
+  <a href="https://github.com/search?q=user%3AViVas970811&type=repositories"><img src="https://skillicons.dev/icons?i=vscode&theme=dark" height="48" alt="VSCode" /></a>
 </p>
+
+<sub>↑ each icon links to the repos in my profile that use that tech.</sub>
+
+---
+
+###  ML Pipeline
+
+<!-- Rendered natively by GitHub — no external image service. -->
+
+```mermaid
+flowchart LR
+    A[Data Sources] --> B[Kafka Streams]
+    B --> C[Feature Store]
+    C --> D[PyTorch Training · GPU]
+    D --> E[Model Registry]
+    E --> F[FastAPI Inference]
+    F --> G[Monitoring]
+
+    classDef ingest  fill:#0D1117,stroke:#58A6FF,stroke-width:2px,color:#C9D1D9
+    classDef compute fill:#0D1117,stroke:#A371F7,stroke-width:2px,color:#C9D1D9
+    classDef serve   fill:#0D1117,stroke:#F778BA,stroke-width:2px,color:#C9D1D9
+
+    class A,B,C ingest
+    class D,E compute
+    class F,G serve
+
+    click D "https://github.com/ViVas970811/WildlifeDetection_YOLOv8"
+    click E "https://github.com/ViVas970811/MedQA"
+    click F "https://github.com/ViVas970811/MedQA"
+    click G "https://github.com/ViVas970811/Meshwatch"
+```
 
 ---
 
@@ -73,6 +118,21 @@
 
 ---
 
+###  Currently Building
+
+<!-- Auto-refreshed every 6h by .github/workflows/currently-building.yml -->
+<!-- CURRENTLY-BUILDING:START -->
+<table><tr>
+  <td width="33%" valign="top"><sub>loading... (first workflow run will populate this)</sub></td>
+  <td width="33%" valign="top"></td>
+  <td width="33%" valign="top"></td>
+</tr></table>
+<!-- CURRENTLY-BUILDING:END -->
+
+<sub>↑ my 3 most recently pushed public repos, refreshed every 6h via GitHub Actions.</sub>
+
+---
+
 ###  GitHub Metrics
 
 <p align="center">
@@ -86,11 +146,20 @@
 
 ---
 
-###  Coding Habits & Repos
+###  Contribution Activity
 
-<!-- These four SVGs come from the lowlighter/metrics Action. -->
 <p align="center">
-  <img src="metrics.plugin.isocalendar.svg" alt="Isometric calendar" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ViVas970811&bg_color=0D1117&color=58A6FF&line=A371F7&point=F778BA&area=true&area_color=A371F7&hide_border=true&custom_title=Commits%20per%20day%20%E2%80%94%20last%2052%20weeks" alt="Activity graph" />
+</p>
+
+---
+
+###  Achievements
+
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=ViVas970811&theme=onedark&no-bg=true&no-frame=true&column=4&row=2&margin-w=10" alt="Trophies" />
+  </a>
 </p>
 
 ---
@@ -115,15 +184,25 @@
 
 ---
 
-###  Latest Writing
+###  Off the Clock
 
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <img src="banners/now-playing.svg" alt="Now playing" />
+    </td>
+    <td width="50%" valign="top" align="center">
+      <img src="banners/live-focus.svg" alt="Current focus" />
+    </td>
+  </tr>
+</table>
 
-<sub>↑ auto-updated every 4 hours from my blog via GitHub Actions.</sub>
+<sub>↑ <b>Now playing</b> updates every 10 min from last.fm (Apple Music bridge). <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
 
 ---
 
 <p align="center">
   <i>Thanks for stopping by — drop me a line at <a href="mailto:evivek@umd.edu">evivek@umd.edu</a>.</i>
 </p>
+
+<p align="center"><sub><a href="easter.md" title="·">·</a></sub></p>
