@@ -163,7 +163,7 @@
   </tr>
 </table>
 
-<sub>↑ <b>Now playing</b> updates every 10 min from last.fm (Apple Music bridge). <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
+<sub>↑ <b>On repeat</b> — a current favorite, hand-picked. <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
 
 ---
 
