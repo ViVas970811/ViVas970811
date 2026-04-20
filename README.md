@@ -96,7 +96,6 @@
 <table><tr><td width='33%' valign='top'><a href='https://github.com/ViVas970811/ClearShot'><b>ClearShot</b></a><br><sub>A diffusion-based pipeline for enhancing amateur product photos to professional quality. U</sub><br><br><sub>● Python &nbsp; ★ 1 &nbsp; · &nbsp; pushed 2d ago</sub></td><td width='33%' valign='top'><a href='https://github.com/ViVas970811/Meshwatch'><b>Meshwatch</b></a><br><sub>Graph-native fraud detection in real time. Heterogeneous GNN (PyTorch Geometric) + XGBoost</sub><br><br><sub>● Python &nbsp; ★ 1 &nbsp; · &nbsp; pushed 3d ago</sub></td><td width='33%' valign='top'><a href='https://github.com/ViVas970811/MedQA'><b>MedQA</b></a><br><sub>A modular NLP system that classifies medical questions, extracts symptoms, retrieves relev</sub><br><br><sub>● Python &nbsp; ★ 1 &nbsp; · &nbsp; pushed 6d ago</sub></td></tr></table>
 <!-- CURRENTLY-BUILDING:END -->
 
-<sub>↑ my 3 most recently pushed public repos, refreshed every 6h via GitHub Actions.</sub>
 
 ---
 
