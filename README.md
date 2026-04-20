@@ -58,35 +58,6 @@
 
 ---
 
-###  ML Pipeline
-
-<!-- Rendered natively by GitHub — no external image service. -->
-
-```mermaid
-flowchart LR
-    A[Data Sources] --> B[Kafka Streams]
-    B --> C[Feature Store]
-    C --> D[PyTorch Training · GPU]
-    D --> E[Model Registry]
-    E --> F[FastAPI Inference]
-    F --> G[Monitoring]
-
-    classDef ingest  fill:#0D1117,stroke:#58A6FF,stroke-width:2px,color:#C9D1D9
-    classDef compute fill:#0D1117,stroke:#A371F7,stroke-width:2px,color:#C9D1D9
-    classDef serve   fill:#0D1117,stroke:#F778BA,stroke-width:2px,color:#C9D1D9
-
-    class A,B,C ingest
-    class D,E compute
-    class F,G serve
-
-    click D "https://github.com/ViVas970811/WildlifeDetection_YOLOv8"
-    click E "https://github.com/ViVas970811/MedQA"
-    click F "https://github.com/ViVas970811/MedQA"
-    click G "https://github.com/ViVas970811/Meshwatch"
-```
-
----
-
 ###  Featured Projects
 
 <table>
