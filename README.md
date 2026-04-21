@@ -155,8 +155,8 @@
 <table>
   <tr>
     <td width="50%" valign="top" align="center">
-      <a href="https://open.spotify.com/track/4h9wh7iOZ0GGn8QVp4RAOB" title="Listen on Spotify">
-        <img src="banners/now-playing.svg" alt="On repeat: I Ain't Worried — OneRepublic (click to listen on Spotify)" />
+      <a href="https://music.apple.com/us/song/i-aint-worried/1621817894" title="Listen on Apple Music">
+        <img src="banners/now-playing.svg" alt="On repeat: I Ain't Worried — OneRepublic (click to listen on Apple Music)" />
       </a>
     </td>
     <td width="50%" valign="top" align="center">
@@ -165,7 +165,7 @@
   </tr>
 </table>
 
-<sub>↑ <b>On repeat</b> — click the card to listen on Spotify.</sub>
+<sub>↑ <b>On repeat</b> — click the card to listen on Apple Music.</sub>
 
 ---
 
