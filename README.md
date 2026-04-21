@@ -155,7 +155,7 @@
 <table>
   <tr>
     <td width="50%" valign="top" align="center">
-      <a href="https://open.spotify.com/search/I%20Ain%27t%20Worried%20OneRepublic" title="Listen on Spotify">
+      <a href="https://open.spotify.com/track/4h9wh7iOZ0GGn8QVp4RAOB" title="Listen on Spotify">
         <img src="banners/now-playing.svg" alt="On repeat: I Ain't Worried — OneRepublic (click to listen on Spotify)" />
       </a>
     </td>
