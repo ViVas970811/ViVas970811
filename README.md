@@ -165,7 +165,7 @@
   </tr>
 </table>
 
-<sub>↑ <b>On repeat</b> — click the card to listen on Spotify. <b>Focus</b> updates hourly — "on the bench:" line is hand-edited weekly to keep it honest.</sub>
+<sub>↑ <b>On repeat</b> — click the card to listen on Spotify.</sub>
 
 ---
 
